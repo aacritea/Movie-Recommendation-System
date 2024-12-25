@@ -136,8 +136,7 @@ print("Combined ratings dictionary assembled!")
 print("Sanity check:")
 print("\tCombined rating for 1197 (The Princess Bride) is " + str(combined_rating_dict[1197]))
 
-combined_recs = algo.recommend(-1, num_recs, ratings=pd.Series(combined_rating_dict))  #Here, -1 tells it that it's not an existing user in the set, that we're giving new ratings, while 10 is how many recommendations it should generate
-
+combined_recs = algo.recommend(-1, num_recs, ratings=pd.Series(combined_rating_dict))  
 joined_data = combined_recs.join(data.movies['genres'], on='item')      
 joined_data = joined_data.join(data.movies['title'], on='item')
 joined_data = joined_data[joined_data.columns[2:]]
