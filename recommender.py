@@ -21,7 +21,6 @@ print("RECOMMENDED FOR ANYBODY:")
 joined_data.head(rows_to_show)
 
 
-
 average_ratings = (data.ratings).groupby('item') \
        .agg(count=('user', 'size'), rating=('rating', 'mean')) \
        .reset_index()
@@ -35,7 +34,6 @@ print("RECOMMENDED FOR ANYBODY:")
 joined_data.head(rows_to_show)
 
 
-
 minimum_to_include = 25
 average_ratings = (data.ratings).groupby(['item']).mean()
 rating_counts = (data.ratings).groupby(['item']).count()
@@ -47,7 +45,6 @@ joined_data = joined_data[joined_data.columns[3:]]
 
 print("RECOMMENDED FOR ANYBODY:")
 joined_data.head(rows_to_show)
-
 
 
 average_ratings = (data.ratings).groupby(['item']).mean()
