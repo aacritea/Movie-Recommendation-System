@@ -11,6 +11,7 @@ joined_data = data.ratings.join(data.movies['genres'], on='item')
 joined_data = joined_data.join(data.movies['title'], on='item')
 joined_data.head(rows_to_show)
 
+
 average_ratings = (data.ratings).groupby(['item']).mean()
 sorted_avg_ratings = average_ratings.sort_values(by="rating", ascending=False)
 joined_data = sorted_avg_ratings.join(data.movies['genres'], on='item')
